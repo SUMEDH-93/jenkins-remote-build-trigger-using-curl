@@ -49,7 +49,8 @@ JENKINS_URL/job/test1/build?token=mytoken123
 ### 8️⃣ Trigger Build from Terminal
 
 ```bash
-curl "http://100.31.79.29:8080/buildByToken/build?job=demo-test1&token=mytoken123"
+
+curl http://100.31.79.29:8080/buildByToken/build?job=test1\&token=mytoken123
 ```
 
 ### 9️⃣ Verify Build
