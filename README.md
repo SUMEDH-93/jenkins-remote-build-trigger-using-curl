@@ -1,98 +1,104 @@
 # 🚀 Jenkins Remote Build Trigger Using cURL and Authentication Token
 
-## 🎯 Objective
+## 🎯 Steps
 
-Trigger a Jenkins job remotely from the terminal using cURL and an authentication token.
-
-## 📋 Prerequisites
-
-* Jenkins Installed and Running
-* Build Authorization Token Root Plugin Installed
-* Jenkins Job Created (`demo-4th`)
-
-## 🛠️ Steps
-
-### 1. Install Build Authorization Token Root Plugin
+### 1️⃣ Install Plugin
 
 * Manage Jenkins → Plugins
 * Search **Build Authorization Token Root**
 * Install Plugin
 
-### 2. Configure Remote Build Trigger
+### 2️⃣ Configure Job
 
-* Open Job **demo-4th**
+* Open Job **demo-test1**
 * Click **Configure**
 * Enable **Trigger builds remotely (e.g., from scripts)**
-* Enter Token:
+
+### 3️⃣ Configure Token
+
+Enter Authentication Token:
 
 ```text
 mytoken123
 ```
 
-### 3. Configure Execute Shell
+### 4️⃣ Configure Execute Shell
 
-Add the following command in **Build Steps → Execute Shell**:
+Add the following command:
 
 ```bash
 echo "Hello World"
 ```
 
-### 4. Save the Job
+### 5️⃣ Save Job
 
-Click **Save**.
+Click **Save** 💾
 
-### 5. Reference Remote Build URL Format
+### 6️⃣ Reference URL Format
 
 ```text
 buildByToken/build?job=RevolutionTest&token=TacoTuesday
 ```
 
-### 6. Replace with Job Name and Token
+### 7️⃣ Replace Job Name and Token
 
 ```text
-buildByToken/build?job=demo-4th&token=mytoken123
+buildByToken/build?job=demo-test1&token=mytoken123
 ```
 
-### 7. Trigger Build from Terminal
+### 8️⃣ Trigger Build from Terminal
 
 ```bash
-curl "http://100.31.79.29:8080/buildByToken/build?job=demo-4th&token=mytoken123"
+curl "http://100.31.79.29:8080/buildByToken/build?job=demo-test1&token=mytoken123"
 ```
 
-## ✅ Verification
+### 9️⃣ Verify Build
 
-1. Open Jenkins Dashboard.
-2. Open Job **demo-4th**.
-3. Verify a new build is created in Build History.
-4. Open Console Output.
-5. Verify the following output:
+* Open Jenkins Dashboard
+* Open Job **demo-test1**
+* Check **Build History**
+* Verify a new build is created
+
+### 🔟 Check Console Output
+
+Expected Output:
 
 ```text
 Hello World
 ```
 
-6. Confirm Build Status = Success.
+### 1️⃣1️⃣ Confirm Success
 
-## 🏗️ Workflow
+✅ Build Triggered Successfully
+
+✅ Token Authentication Working
+
+✅ cURL Request Executed Successfully
+
+✅ Jenkins Job Completed Successfully
+
+---
+
+## 🔄 Workflow
 
 ```text
-Terminal
-   ↓
-cURL Request
-   ↓
-Authentication Token Validation
-   ↓
-Jenkins Receives Request
-   ↓
-demo-4th Job Triggered
-   ↓
-Execute Shell Runs
-   ↓
-Hello World Printed
-   ↓
-Build Successful
+💻 Terminal
+      ↓
+📡 cURL Request
+      ↓
+🔐 Token Authentication
+      ↓
+⚙️ Jenkins Receives Request
+      ↓
+🚀 demo-test1 Job Triggered
+      ↓
+🖥️ Execute Shell Runs
+      ↓
+💬 Hello World Printed
+      ↓
+✅ Build Successful
 ```
 
 ## 🎉 Result
 
-The Jenkins job was successfully triggered remotely using a cURL command and authentication token.
+The Jenkins job **demo-test1** was successfully triggered remotely using **cURL** and an **Authentication Token**.
