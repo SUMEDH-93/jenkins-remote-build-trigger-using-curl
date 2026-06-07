@@ -43,7 +43,7 @@ buildByToken/build?job=RevolutionTest&token=TacoTuesday
 ### 7️⃣ Replace Job Name and Token
 
 ```text
-buildByToken/build?job=demo-test1&token=mytoken123
+JENKINS_URL/job/test1/build?token=mytoken123 
 ```
 
 ### 8️⃣ Trigger Build from Terminal
