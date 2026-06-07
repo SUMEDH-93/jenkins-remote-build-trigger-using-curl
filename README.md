@@ -31,12 +31,10 @@ mytoken123
 
 ### 3. Configure Execute Shell
 
-Add the following commands in **Build Steps → Execute Shell**:
+Add the following command in **Build Steps → Execute Shell**:
 
 ```bash
-ls
-cat README.md
-cat index.html
+echo "Hello World"
 ```
 
 ### 4. Save the Job
@@ -67,12 +65,10 @@ curl "http://100.31.79.29:8080/buildByToken/build?job=demo-4th&token=mytoken123"
 2. Open Job **demo-4th**.
 3. Verify a new build is created in Build History.
 4. Open Console Output.
-5. Verify the following commands executed successfully:
+5. Verify the following output:
 
-```bash
-ls
-cat README.md
-cat index.html
+```text
+Hello World
 ```
 
 6. Confirm Build Status = Success.
@@ -92,9 +88,11 @@ demo-4th Job Triggered
    ↓
 Execute Shell Runs
    ↓
+Hello World Printed
+   ↓
 Build Successful
 ```
 
 ## 🎉 Result
 
-The Jenkins job was successfully triggered remotely using a #CURL command and authentication token.
+The Jenkins job was successfully triggered remotely using a cURL command and authentication token.
